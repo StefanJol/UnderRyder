@@ -919,9 +919,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
   moveSpeed: 8
-  JumpStr: 5
-  gravity: -9.81
+  JumpStr: 10
+  gravity: -25
   runSpeed: 6
+  dashStr: 18
+  dashTime: 0.18
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
