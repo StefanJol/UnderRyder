@@ -17,7 +17,10 @@ public class PlayerScript : MonoBehaviour
     public float dashStr = 20f;
     public float dashTime = 0.25f;
     Vector3 velocity;
-
+    public int JumpsLeft = 1;
+    private bool touchingWall = false;
+    private string currentTouchedWall;
+    private string lastTouchedWall;
 void Awake() {
     controller = GetComponent<CharacterController>();
     controls = new PlayerControls();
@@ -62,9 +65,15 @@ void Update() {
 
 void Jump(){
 
-    if (controller.isGrounded){
+    if (controller.isGrounded ){
         velocity.y = JumpStr;
         
+        JumpsLeft = 1;
+    }
+    if (touchingWall && JumpsLeft > 0)
+    {
+        velocity.y = JumpStr;
+        JumpsLeft -= 1;
         
     }
 }
@@ -80,6 +89,19 @@ void Dash(){
         }
 
 
+}
+
+void OnControllerColliderHit(ControllerColliderHit hit)
+{
+    // Check if the surface normal is roughly horizontal
+    if (Mathf.Abs(hit.normal.y) < 0.3f)
+    {  
+
+        lastTouchedWall = hit.gameObject.name;
+        touchingWall = true;
+        
+    }
+    else{ touchingWall = false;}
 }
 
 }
