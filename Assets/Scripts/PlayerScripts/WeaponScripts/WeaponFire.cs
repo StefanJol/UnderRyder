@@ -26,8 +26,13 @@ public class WeaponFire : MonoBehaviour
    
    void Start()
    {
-       fistsAnimator.SetBool("Fists", true);
-       fistsAnimator.SetBool("Revolver", false);
+        fistsAnimator.SetBool("Fists", true);
+        fistsAnimator.SetBool("Revolver", false);
+        bulletVelocity = 3f; 
+        bulletLifetime = 0.1f;
+        FireDelay = 0.30f;
+        FireDelayAfter = 0.35f;
+        currentWeapon = SelectedWeapon.Fists;
        if (Hand != null)
        {
            originalHandPos = Hand.transform.localPosition;
