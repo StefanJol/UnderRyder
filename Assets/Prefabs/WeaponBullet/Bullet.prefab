@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 227066677835874493}
   - component: {fileID: 3778500597732390627}
   - component: {fileID: 1565289132091381749}
-  - component: {fileID: 7275104619389296646}
-  m_Layer: 0
+  - component: {fileID: -1318753149652363492}
+  m_Layer: 7
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!114 &7275104619389296646
+--- !u!114 &-1318753149652363492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
